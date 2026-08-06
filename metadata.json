@@ -1,0 +1,10 @@
+{
+    "nombre": "Memory",
+    "autores": ["Krischel Moret", 
+    "Roxana García", 
+    "Isabella Rocca",
+    "Pablo Yaguaracuto"],
+    "version": "1.0.0",
+    "descripcion": "Juego de Memoria",
+    "grupo": "Grupo #2"
+}
