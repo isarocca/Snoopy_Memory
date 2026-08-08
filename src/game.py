@@ -205,6 +205,11 @@ class AvatarGame:
         self.estado = "VENTANA_3" 
     
     def _procesar_resultados(self):
+        
+        if hasattr(self, 'confirm'):
+            for cat, item in self.confirm.items():
+                self.logica.combinacion_usuario[cat] = item
+
         self.logica.simular_ia_y_evaluar()
         self.sonidos["musica_vs"].play(loops=-1)      
         self.estado = "VENTANA_5" 
