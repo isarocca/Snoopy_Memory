@@ -72,11 +72,6 @@ class AvatarGame:
         self.fuente_category = pygame.font.Font(str(archivo_relleno), constants.CON.CATEGORY_SIZE)
         self.fuente_preparate = pygame.font.Font(str(archivo_fuente), constants.CON.TIMER_SIZE)
         self.fuente_instrucciones= pygame.font.Font(str(archivo_instruc), constants.CON.INST_SIZE)
-        import json
-        self.textos = {}
-        with open(ruta_textos, "r", encoding="utf-8") as f:
-            self.textos = json.load(f)
-        
         
         # 7. VARIABLES DE MENÚ ROPA
         self.indice_menu = 0   
@@ -210,10 +205,6 @@ class AvatarGame:
         self.estado = "VENTANA_3" 
     
     def _procesar_resultados(self):
-        self.logica.combinacion_usuario.clear()
-        for cat, item in self.confirm.items():
-            self.logica.combinacion_usuario[cat] = item
-
         self.logica.simular_ia_y_evaluar()
         self.sonidos["musica_vs"].play(loops=-1)      
         self.estado = "VENTANA_5" 
